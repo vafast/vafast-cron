@@ -1,4 +1,4 @@
-import { Elysia } from '@huyooo/elysia'
+import { Server, type Route } from 'tirne'
 import { Cron, type CronOptions } from 'croner'
 
 export interface CronConfig<Name extends string = string> extends CronOptions {
@@ -28,33 +28,25 @@ export interface CronConfig<Name extends string = string> extends CronOptions {
 	run: (store: Cron) => any | Promise<any>
 }
 
-export const cron =
-	<Name extends string = string>({
-		pattern,
-		name,
-		run,
-		...options
-	}: CronConfig<Name>) =>
-	(app: Elysia) => {
-		if (!pattern) throw new Error('pattern is required')
-		if (!name) throw new Error('name is required')
+export const cron = <Name extends string = string>({
+	pattern,
+	name,
+	run,
+	...options
+}: CronConfig<Name>) => {
+	if (!pattern) throw new Error('pattern is required')
+	if (!name) throw new Error('name is required')
 
-		return app.state((store) => {
-			// @ts-expect-error private property
-			const prevCron = app.singleton.store?.cron ?? {}
+	// Create a new cron job
+	const cronJob = new Cron(pattern, options, () => {
+		// Create a mock store for the cron job
+		const mockStore = { cron: { [name]: cronJob } }
+		run(mockStore as any)
+	})
 
-			return {
-				...store,
-				cron: {
-					...prevCron,
-					[name]: new Cron(pattern, options, () =>
-						// @ts-expect-error private property
-						run(app.singleton.store as any)
-					)
-				} as Record<Name, Cron>
-			}
-		})
-	}
+	// Return the cron job for external management
+	return cronJob
+}
 
 export { Patterns } from './schedule'
 

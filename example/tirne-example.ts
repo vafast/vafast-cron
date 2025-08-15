@@ -29,6 +29,28 @@ const routes: Route[] = [
 			loggerCron.stop()
 			return json({ message: 'Stop logger' })
 		}
+	},
+	{
+		method: 'GET',
+		path: '/status',
+		handler: () => {
+			return json({
+				heartbeat: heartbeatCron.isRunning(),
+				logger: loggerCron.isRunning(),
+				nextRun: {
+					heartbeat: heartbeatCron.nextRun(),
+					logger: loggerCron.nextRun()
+				}
+			})
+		}
+	},
+	{
+		method: 'POST',
+		path: '/start-logger',
+		handler: () => {
+			loggerCron.resume()
+			return json({ message: 'Logger started' })
+		}
 	}
 ]
 
