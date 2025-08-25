@@ -12,15 +12,16 @@
 		"release": "npm run build && npm run test && npm publish --access public"
 	},
 	"peerDependencies": {
-		"tirne": ">= 0.1.16"
+		"vafast": ">= 0.1.12"
 	},
 	"dependencies": {
-		"croner": "^9.1.0"
+		"croner": "^9.1.0",
+		"vafast": "^0.1.13"
 	},
 	"devDependencies": {
 		"@types/bun": "1.1.14",
-		"tirne": "^0.1.16",
 		"eslint": "9.6.0",
+		"vafast": "^0.1.12",
 		"tsup": "^8.1.0",
 		"typescript": "^5.5.3"
 	},

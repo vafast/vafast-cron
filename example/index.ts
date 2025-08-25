@@ -1,6 +1,6 @@
-import { Server, json } from 'tirne'
+import { Server, createRouteHandler } from 'vafast'
 import { cron } from '../src'
-import type { Route } from 'tirne'
+import type { Route } from 'vafast'
 
 // 创建cron任务
 const heartbeatCron = cron({
@@ -24,11 +24,11 @@ const routes: Route[] = [
 	{
 		method: 'GET',
 		path: '/',
-		handler: () => {
+		handler: createRouteHandler(() => {
 			// 停止logger任务
 			loggerCron.stop()
-			return json({ message: 'Stop logger' })
-		}
+			return { message: 'Stop logger' }
+		})
 	}
 ]
 

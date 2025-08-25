@@ -3,7 +3,7 @@ import { Patterns } from '../src/schedule'
 
 import { describe, expect, it } from 'bun:test'
 
-describe('Cron for Tirne', () => {
+describe('Cron for Vafast', () => {
 	it('should create cron job', () => {
 		let done = false
 
