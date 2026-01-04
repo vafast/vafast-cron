@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"croner": "^9.1.0",
-		"vafast": "^0.1.13"
+		"vafast": "^0.3.9"
 	},
 	"files": [
 		"dist",
