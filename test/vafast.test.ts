@@ -1,7 +1,6 @@
 import { cron } from '../src'
 import { Patterns } from '../src/schedule'
-
-import { describe, expect, it } from 'bun:test'
+import { describe, expect, it } from 'vitest'
 
 describe('Cron for Vafast', () => {
 	it('should create cron job', () => {
