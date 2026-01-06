@@ -1,6 +1,6 @@
 {
 	"name": "@vafast/cron",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Plugin for Vafast for cron jobs",
 	"type": "module",
 	"license": "MIT",
