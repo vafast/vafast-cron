@@ -11,11 +11,11 @@
 		"release": "npm run build && npm run test && npx bumpp && npm publish --access=public"
 	},
 	"peerDependencies": {
-		"vafast": ">=0.1.0 <1.0.0"
+		"vafast": ">=0.1.0"
 	},
 	"dependencies": {
 		"croner": "^9.1.0",
-		"vafast": ">=0.1.0 <1.0.0"
+		"vafast": ">=0.1.0"
 	},
 	"files": [
 		"dist",
@@ -27,7 +27,7 @@
 		"rimraf": "^6.0.1",
 		"tsup": "^8.5.1",
 		"typescript": "^5.4.5",
-		"vafast": ">=0.1.0 <1.0.0",
+		"vafast": ">=0.1.0",
 		"vitest": "^4.0.16"
 	},
 	"main": "./dist/index.js",
