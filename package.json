@@ -47,13 +47,13 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/vafastjs/vafast-cron"
+		"url": "https://github.com/vafast/vafast-cron"
 	},
 	"author": {
 		"name": "saltyAom",
 		"url": "https://github.com/SaltyAom",
 		"email": "saltyaom@gmail.com"
 	},
-	"homepage": "https://github.com/vafastjs/vafast-cron",
-	"bugs": "https://github.com/vafastjs/vafast-cron/issues"
+	"homepage": "https://github.com/vafast/vafast-cron",
+	"bugs": "https://github.com/vafast/vafast-cron/issues"
 }
