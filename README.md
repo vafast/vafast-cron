@@ -5,7 +5,7 @@ Plugin for [Vafast](https://github.com/vafastjs/vafast) that adds support for ru
 ## Installation
 
 ```bash
-bun add @vafast/cron
+npm install @vafast/cron
 # or
 npm install @vafast/cron
 ```
