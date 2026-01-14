@@ -1,4 +1,3 @@
-import { Server, type Route } from 'vafast'
 import { Cron, type CronOptions } from 'croner'
 
 export interface CronConfig<Name extends string = string> extends CronOptions {
